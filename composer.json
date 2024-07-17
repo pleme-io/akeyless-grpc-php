@@ -1,0 +1,25 @@
+{
+"name": "akeyless/grpc",
+"version": "1.0.12",
+"description": "Akeyless gRPC SDK",
+"type": "library",
+"require": {
+    "php": ">=7.2",
+    "google/protobuf": "^3.15",
+    "grpc/grpc": "^1.57"
+},
+"autoload": {
+    "psr-4": {
+        "Akeyless\\\\": "src/Akeyless/",
+        "Metadata\\\\": "src/Metadata/"
+    }
+},
+"license": "Apache-2.0",
+"authors": [
+    {
+        "name": "Akeyless",
+        "email": "refael@akeyless.io"
+    }
+],
+"minimum-stability": "stable"
+}
