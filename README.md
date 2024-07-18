@@ -39,7 +39,7 @@ use Akeyless\gRPC\ListItems;
 use Akeyless\gRPC\ListItemsRequest;
 
 // Replace with your actual hostname, options, and channel if needed
-$hostname = "192.168.1.117:8085";
+$hostname = "localhost:8085";
 
 // Specify your channel options as needed
 $opts = [
