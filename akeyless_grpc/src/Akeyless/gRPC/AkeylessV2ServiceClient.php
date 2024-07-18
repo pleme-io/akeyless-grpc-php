@@ -36,7 +36,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function Auth(\Akeyless\gRPC\AuthRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/Auth',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/Auth',
         $argument,
         ['\Akeyless\gRPC\AuthOutput', 'decode'],
         $metadata, $options);
@@ -50,7 +50,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function CreateSecret(\Akeyless\gRPC\CreateSecretRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/CreateSecret',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/CreateSecret',
         $argument,
         ['\Akeyless\gRPC\CreateSecretOutput', 'decode'],
         $metadata, $options);
@@ -64,7 +64,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function DeleteItem(\Akeyless\gRPC\DeleteItemRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/DeleteItem',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/DeleteItem',
         $argument,
         ['\Akeyless\gRPC\DeleteItemOutput', 'decode'],
         $metadata, $options);
@@ -78,7 +78,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function DescribeItem(\Akeyless\gRPC\DescribeItemRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/DescribeItem',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/DescribeItem',
         $argument,
         ['\Akeyless\gRPC\Item', 'decode'],
         $metadata, $options);
@@ -92,7 +92,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function GetRotatedSecretValue(\Akeyless\gRPC\GetRotatedSecretValueRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/GetRotatedSecretValue',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/GetRotatedSecretValue',
         $argument,
         ['\Akeyless\gRPC\GetRotatedSecretValueResponse', 'decode'],
         $metadata, $options);
@@ -106,7 +106,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function GetSecretValue(\Akeyless\gRPC\GetSecretValueRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/GetSecretValue',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/GetSecretValue',
         $argument,
         ['\Akeyless\gRPC\GetSecretValueResponse', 'decode'],
         $metadata, $options);
@@ -120,7 +120,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function ListItems(\Akeyless\gRPC\ListItemsRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/ListItems',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/ListItems',
         $argument,
         ['\Akeyless\gRPC\ListItemsInPathOutput', 'decode'],
         $metadata, $options);
@@ -134,7 +134,7 @@ class AkeylessV2ServiceClient extends \Grpc\BaseStub {
      */
     public function UpdateSecretVal(\Akeyless\gRPC\UpdateSecretValRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/akeyless_grpc.services.v2service.AkeylessV2Service/UpdateSecretVal',
+        return $this->_simpleRequest('/akeyless_grpc.AkeylessV2Service/UpdateSecretVal',
         $argument,
         ['\Akeyless\gRPC\UpdateSecretValOutput', 'decode'],
         $metadata, $options);

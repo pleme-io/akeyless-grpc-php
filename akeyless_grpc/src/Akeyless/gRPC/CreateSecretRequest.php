@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>akeyless_grpc.services.v2service.CreateSecretRequest</code>
+ * Generated from protobuf message <code>akeyless_grpc.CreateSecretRequest</code>
  */
 class CreateSecretRequest extends \Google\Protobuf\Internal\Message
 {
