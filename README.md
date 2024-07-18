@@ -31,13 +31,15 @@ To use `akeyless/grpc` in your project, run the following command `composer requ
 require "vendor/autoload.php";
 
 use Akeyless\gRPC\AkeylessV2ServiceClient;
-use Akeyless\gRPC\AuthRequest;
 use Akeyless\gRPC\Auth;
-use Akeyless\gRPC\GetSecretValueRequest;
+use Akeyless\gRPC\AuthRequest;
 use Akeyless\gRPC\GetSecretValue;
+use Akeyless\gRPC\GetSecretValueRequest;
+use Akeyless\gRPC\ListItems;
+use Akeyless\gRPC\ListItemsRequest;
 
 // Replace with your actual hostname, options, and channel if needed
-$hostname = "127.0.0.1:8085";
+$hostname = "192.168.1.117:8085";
 
 // Specify your channel options as needed
 $opts = [
@@ -49,8 +51,8 @@ $client = new AkeylessV2ServiceClient($hostname, $opts);
 
 // Authenticate
 $auth = new Auth([
-    "access_id" => "************",
-    "access_key" => "**********",
+    "access_id" => "********",
+    "access_key" => "********",
     "access_type" => "access_key",
 ]);
 
@@ -62,6 +64,21 @@ list($authResponse, $status) = $client->Auth($authRequest)->wait();
 
 $token = $authResponse->getToken();
 
+$listItems = new ListItems();
+$listItems->setToken($token);
+
+$listItemsRequest = new ListItemsRequest();
+$listItemsRequest->setBody($listItems);
+
+//List items
+list($listItemsResponse, $status) = $client
+    ->ListItems($listItemsRequest)
+    ->wait();
+
+foreach ($listItemsResponse->getItems() as $item) {
+    echo $item->getItemName() . PHP_EOL;
+}
+
 $getSecretValue = new GetSecretValue();
 $getSecretValue->setToken($token);
 $getSecretValue->setNames(["/MyFirstSecret"]);
@@ -69,6 +86,7 @@ $getSecretValue->setNames(["/MyFirstSecret"]);
 $getSecretValueRequest = new GetSecretValueRequest();
 $getSecretValueRequest->setBody($getSecretValue);
 
+//Get secret value
 list($getSecretValueResponse, $status) = $client
     ->GetSecretValue($getSecretValueRequest)
     ->wait();
@@ -77,10 +95,10 @@ $fields = $getSecretValueResponse->getData()->getFields();
 
 // Iterate over each field
 foreach ($fields as $key => $value) {
-    $stringValue = $value->getStringValue();  
+    $stringValue = $value->getStringValue();
 
     // Use the values as needed
-    echo "Field: $key, Value: $stringValue\n";
+    echo "Field: $key, Value: $stringValue" . PHP_EOL;
 }
 
 ```
